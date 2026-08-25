@@ -26,7 +26,7 @@ Três níveis:
 | Branch | Para quê |
 |---|---|
 | `main` | Apenas releases estáveis. Uma por etapa entregue. Nunca se commita direto. |
-| `develop` | Integração. **Todo trabalho novo parte daqui.** |
+| `develop` | Integração. **Todo trabalho novo parte daqui.** É a branch padrão do repositório: PR nasce apontando para cá, e `Closes #123` fecha a issue quando o merge acontece. |
 | `feature/<nome>` · `fix/<nome>` | Branches curtas, uma por funcionalidade |
 
 ```
