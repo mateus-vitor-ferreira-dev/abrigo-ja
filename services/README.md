@@ -1,19 +1,19 @@
-# Serviços
+# Serviços de domínio
 
-Quatro serviços de domínio (mínimo exigido) mais dois de apoio.
+**Esta pasta contém exatamente os quatro serviços de domínio exigidos, e nada além disso.**
 
-| Pasta | Papel | Conta como serviço de domínio? |
-|---|---|---|
-| `familias/` | Cadastro e fila de priorização de famílias afetadas | Sim |
-| `abrigos/` | Abrigos, estrutura e controle de vagas | Sim |
-| `suprimentos/` | Estoque de kits e materiais | Sim |
-| `logistica/` | Veículos, equipes e ordens de transporte | Sim |
-| `acolhimento-saga/` | Coordenação da transação de acolhimento | Não — apoio |
-| `assistente/` | RAG + LangChain sobre a base de conhecimento | Não — apoio |
+| Pasta | Responsabilidade |
+|---|---|
+| `familias/` | Cadastro e fila de priorização de famílias afetadas |
+| `abrigos/` | Abrigos, estrutura e controle de vagas |
+| `suprimentos/` | Estoque de kits e materiais |
+| `logistica/` | Veículos, equipes e ordens de transporte |
 
-`acolhimento-saga/` só existe se a decisão for **saga orquestrada**. Se o grupo optar por
-coreografada, a pasta é removida e a coordenação passa a viver nos eventos trocados entre os
-quatro serviços de domínio. Decisão pendente — registrar em `docs/adr/`.
+O mínimo exigido são 4 serviços de domínio independentes, com um banco por serviço em instâncias
+separadas. Contar os serviços de domínio deste projeto é contar as pastas daqui.
+
+Os serviços de **apoio** — orquestrador da saga e assistente de LLM — ficam em
+[`../platform`](../platform). Eles não são serviços de domínio e não entram nessa contagem.
 
 ## Estrutura interna de cada serviço
 

@@ -21,11 +21,13 @@ Mapa das pastas e a que item da avaliação cada uma responde.
 │   ├── parte-4-llm/               RAG, LangChain, resiliência, latência e custo   [P4]
 │   └── apresentacoes/             slides de cada etapa
 │
-├── services/
-│   ├── familias/                  ┐
-│   ├── abrigos/                   │ 4 serviços de domínio, banco próprio cada     [P2: 15%]
+├── services/                      SÓ os 4 de domínio — contar as pastas daqui
+│   ├── familias/                  ┐                                              [P2: 15%]
+│   ├── abrigos/                   │ um banco próprio cada, instâncias separadas
 │   ├── suprimentos/               │
-│   ├── logistica/                 ┘
+│   └── logistica/                 ┘
+│
+├── platform/                      serviços de APOIO — não contam como domínio
 │   ├── acolhimento-saga/          orquestrador — só se a saga for orquestrada     [P2: 20%]
 │   └── assistente/                RAG + LangChain + resiliência do LLM            [P4: 45%]
 │
@@ -47,11 +49,16 @@ Mapa das pastas e a que item da avaliação cada uma responde.
 └── .github/                       template de PR e CI opcional                    [transversal]
 ```
 
-## Três regras que a estrutura sustenta
+## Quatro regras que a estrutura sustenta
 
 **Dockerfile mora junto do serviço, não em `infra/`.** Ele empacota aquele código e precisa ser
 próprio — imagem de terceiro sem customização não pontua. Centralizá-los desconecta o
 Dockerfile do código que ele constrói.
+
+**`services/` responde à contagem sozinha.** O mínimo exigido são 4 serviços de domínio, e é
+isso que a pasta contém — nem um a mais. Orquestrador de saga e assistente de LLM são serviços,
+mas não são serviços *de domínio*; misturados aos quatro, obrigavam quem olha a árvore a abrir um
+README para saber quais contam. `platform/` responde antes da pergunta.
 
 **`db/migrations/` mora dentro de cada serviço.** Não existe pasta `database/` na raiz: isso
 convidaria ao schema compartilhado, exatamente o que *database per service* proíbe. Nenhum
@@ -67,5 +74,5 @@ critério foi atendido, e a correção é por critério.
 |---|---|
 | `docker-compose.yml`, Dockerfiles | Parte 3 — a Parte 2 não exige sistema em execução |
 | Manifestos dentro de `infra/k8s/*` | Parte 3 |
-| Código em `services/*/src` | a partir da Parte 2 (protótipo) / Parte 4 (funcional) |
-| `services/acolhimento-saga/` pode ser removida | se a decisão for saga coreografada (ADR-0002) |
+| Código em `services/*/src` e `platform/*/src` | a partir da Parte 2 (protótipo) / Parte 4 (funcional) |
+| `platform/acolhimento-saga/` pode ser removida | se a decisão for saga coreografada (ADR-0002) |

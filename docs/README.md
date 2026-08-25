@@ -28,7 +28,7 @@ raciocínio três semanas depois. Use [`adr/template.md`](./adr/template.md).
 
 | ADR | Decisão | Trava o quê |
 |---|---|---|
-| [0002](./adr/0002-variante-da-saga.md) | Saga orquestrada ou coreografada | Existência de `services/acolhimento-saga/` |
+| [0002](./adr/0002-variante-da-saga.md) | Saga orquestrada ou coreografada | Existência de `platform/acolhimento-saga/` |
 | [0003](./adr/0003-servico-com-cqrs.md) | Serviço com CQRS e defasagem aceitável | Modelo de leitura e a demo da Parte 4 |
 | [0004](./adr/0004-bancos-por-servico.md) | Tecnologia de banco por serviço | `db/migrations` de cada serviço |
 | [0005](./adr/0005-versionamento-da-api.md) | Estratégia de versionamento | Todos os contratos em `api/` |

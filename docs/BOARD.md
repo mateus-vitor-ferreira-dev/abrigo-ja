@@ -69,8 +69,8 @@ nesta disciplina, o que não está registrado não conta para a nota de quem fez
 | `services/abrigos` | Vagas e estrutura |
 | `services/suprimentos` | Estoque de kits |
 | `services/logistica` | Veículos e ordens de transporte |
-| `services/acolhimento-saga` | Orquestração da transação (se a saga for orquestrada — ADR-0002) |
-| `services/assistente` | RAG, LangChain e resiliência do LLM |
+| `platform/acolhimento-saga` | Orquestração da transação (se a saga for orquestrada — ADR-0002) |
+| `platform/assistente` | RAG, LangChain e resiliência do LLM |
 | `gateway/` | Roteamento e responsabilidades de borda |
 | `bff/` | `bff-painel` e `bff-campo` |
 | `clients/` | `painel-web` e `app-campo` |
@@ -86,7 +86,7 @@ saga vai para `docs/`, mesmo que quem escreva seja quem implementou o orquestrad
 > **Card que toca mais de uma pasta é card mal quebrado — com uma exceção.** Mudança de contrato
 > entre serviços vira **dois ou mais cards**: um em `docs/api/` fechando o contrato, e um por
 > serviço que o implementa. É o contrato que sincroniza o trabalho, não o card. A exceção é a
-> saga: ela atravessa serviços por natureza, e o card dela mora em `services/acolhimento-saga`
+> saga: ela atravessa serviços por natureza, e o card dela mora em `platform/acolhimento-saga`
 > (ou em `docs/` enquanto for só modelagem).
 
 ---
@@ -185,11 +185,11 @@ qualquer card. A tabela diz *quem corre atrás quando ninguém pegou* e *a quem 
 | Área | Responsabilidade | Pastas típicas | Quem responde |
 |---|---|---|---|
 | ⚙️ **Domínio** | Regras de negócio dos 4 serviços | `services/{familias,abrigos,suprimentos,logistica}` | *(a definir)* |
-| 🔗 **Integração** | Saga, eventos, outbox, CQRS | `services/acolhimento-saga` · `docs/` | *(a definir)* |
+| 🔗 **Integração** | Saga, eventos, outbox, CQRS | `platform/acolhimento-saga` · `docs/` | *(a definir)* |
 | 🚪 **Borda** | Gateway e BFFs | `gateway/` · `bff/` | *(a definir)* |
 | 💻 **Cliente** | Painel web e app de campo | `clients/` | *(a definir)* |
 | 🐳 **Infra** | Docker, Compose, Kubernetes | `infra/` · raiz | *(a definir)* |
-| 🤖 **LLM** | RAG, LangChain, resiliência, custo | `services/assistente` | *(a definir)* |
+| 🤖 **LLM** | RAG, LangChain, resiliência, custo | `platform/assistente` | *(a definir)* |
 | 📄 **Documentação** | Arquitetura, contratos, diagramas, ADRs, roteiros | `docs/` | *(a definir)* |
 
 > **Documentação não é a sobra do trabalho de ninguém.** As Partes 1 e 2 são 30% da nota e são

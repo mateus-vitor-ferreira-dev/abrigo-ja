@@ -6,7 +6,7 @@
 
 ## Contexto
 
-A Parte 2 exige escolher **apenas uma** variante e justificá-la frente à alternativa (20% da etapa). A escolha define se `services/acolhimento-saga/` existe ou se a coordenação vive nos eventos entre os serviços de domínio.
+A Parte 2 exige escolher **apenas uma** variante e justificá-la frente à alternativa (20% da etapa). A escolha define se `platform/acolhimento-saga/` existe ou se a coordenação vive nos eventos entre os serviços de domínio.
 
 ## Alternativas consideradas
 
