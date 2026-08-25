@@ -1,0 +1,34 @@
+# Ambiente
+.env
+.env.local
+*.local
+
+# Dependências
+node_modules/
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+target/
+build/
+dist/
+vendor/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs e dados locais
+*.log
+logs/
+data/
+*.sqlite
+*.db
+
+# Kubernetes / secrets locais
+secrets/
+*.key
+*.pem
+kubeconfig
