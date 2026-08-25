@@ -53,10 +53,26 @@ nesta disciplina, o que não está registrado não conta para a nota de quem fez
 | **Pasta** | Onde o trabalho acontece — ver a tabela abaixo. **Obrigatório.** |
 | **Área** | Domínio · Integração · Borda · Cliente · Infra · LLM · Documentação — *que competência a tarefa exige* |
 | **Etapa** | `P1` · `P2` · `P3` · `P4` — a entrega a que o card pertence |
+| **Entrega** | Data em que o card precisa estar pronto. Ver a ressalva abaixo — nas Partes 2 e 4 **não** é a data da apresentação |
 | **Item da rubrica** | O critério avaliado que este card atende (ex.: `P2 · SAGA 20%`) |
 | **Estimativa** | `P` (até meio dia) · `M` (1–2 dias) · `G` (3+ dias) · `GG` (quebra em tarefas menores) |
 | **Prioridade** | Alta · Média · Baixa |
 | **Responsável** | Uma pessoa. Trabalho em par: a segunda entra como `Co-authored-by:` no commit |
+
+> **A `Entrega` das Partes 2 e 4 é a data do congelamento, não a da apresentação.** O repositório
+> congela às 23h59 da véspera do primeiro dia — 21/10 e 09/12 — e commit posterior não é
+> considerado naquela etapa (`docs/descricao-trabalho-pratico.md:56`). Preencher o campo com o dia
+> da apresentação dá ao grupo um a seis dias de folga que não existem.
+>
+> | Etapa | `Entrega` correta | Apresentação |
+> |---|---|---|
+> | `P1` | 17/09/2026 | 17/09/2026 |
+> | `P2` | **21/10/2026** | 22/10 ou 27/10 |
+> | `P3` | 17/11/2026 | 17/11/2026 |
+> | `P4` | **09/12/2026** | 10/12 ou 15/12 |
+>
+> E como a review é bloqueante, o último PR de uma etapa precisa **abrir** antes disso, não ser
+> mesclado em cima da hora.
 
 > Item marcado como **GG** não entra na etapa. Ele é quebrado no planejamento — se não dá para
 > quebrar, é porque ainda não foi entendido.
